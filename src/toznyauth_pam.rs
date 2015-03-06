@@ -43,7 +43,7 @@ pub extern fn pam_sm_authenticate(pamh: &module::PamHandleT, flags: PamFlag,
         user   =<< module::get_user(pamh, None).map_err(AuthError::PamResult);
         config =<< Config::build(user.as_slice(), args.as_slice())
             .map_err(AuthError::ConfigError);
-        conv   =<< unsafe { module::get_item::<PamConv>(pamh) }.map_err(AuthError::PamResult);
+        conv   =<< module::get_item::<PamConv>(pamh).map_err(AuthError::PamResult);
         login  =<< authenticate(&config, user.as_slice(), &conv);
         ign show_info(conv, flags, &format!("Authenticated as {}", login.user_display));
         ret Ok(constants::PAM_SUCCESS)
@@ -224,7 +224,7 @@ fn show_info<E>(conv: &PamConv, flags: PamFlag, info: &str) -> Result<(), E> {
 }
 
 fn show_err(pamh: &module::PamHandleT, err: &AuthError) {
-    for conv in unsafe { module::get_item::<PamConv>(pamh) }.iter() {
+    for conv in module::get_item::<PamConv>(pamh).iter() {
         let _ = conv.send(PAM_ERROR_MSG, &format!("{}", err));
     }
 }
