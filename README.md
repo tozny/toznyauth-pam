@@ -1,13 +1,15 @@
 toznyauth-pam
 =============
 
-Authenticate to Linux-based systems using Tozny. Based on the PAM framework.
+Authenticate to Linux-based systems using [Tozny][]. Based on the PAM framework.
 
 This project is currently building with:
 
 > rustc 1.0.0-nightly (b4c965ee8 2015-03-02) (built 2015-03-03)
 
 Earlier or later versions of the rust compiler are unlikely to work.
+
+[Tozny]: http://tozny.com/
 
 
 ## Building
