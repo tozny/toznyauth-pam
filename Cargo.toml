@@ -1,0 +1,23 @@
+[package]
+
+name = "toznyauth_pam"
+version = "1.0.0"
+authors = [ "Jesse Hallett <jesse@galois.com>" ]
+
+[lib]
+
+name = "toznyauth_pam"
+crate-type = ["dylib"]
+
+[dependencies]
+getopts = "~0.2.4"
+mdo     = "~0.2.0"
+qrcode  = "~0.1.0"
+toml    = "~0.1.16"
+url     = "~0.2.18"
+
+[dependencies.tozny_auth]
+git = 'https://github.com/tozny/sdk-rust.git'
+
+[dependencies.pam]
+git = 'https://github.com/tozny/rust-pam.git'
