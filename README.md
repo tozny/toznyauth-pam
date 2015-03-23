@@ -14,9 +14,16 @@ Earlier or later versions of the rust compiler are unlikely to work.
 
 ## Building
 
-Install rust and cargo:
+Install rust and cargo.  To get the specific version of rust listed above:
 
-    $ curl -s https://static.rust-lang.org/rustup.sh | sudo sh
+    $ curl -O https://static.rust-lang.org/dist/2015-03-03/rust-nightly-x86_64-unknown-linux-gnu.tar.gz
+    $ tar -xzf rust-nightly-x86_64-unknown-linux-gnu.tar.gz
+    $ cd rust-nightly-x86_64-unknown-linux-gnu
+    $ sudo ./install.sh
+
+Install development dependencies.  On Debian-based systems those are:
+
+    $ sudo apt-get install build-essential libpam-dev
 
 Build:
 
