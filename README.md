@@ -28,7 +28,7 @@ The demo builds the PAM module in a Docker container,
 and runs an ssh server that is configured to use Tozny authentication.
 
 Before trying the demo, install the Tozny app for [Android][] or [iOS][].
-Then try logging in to [web-based demo][bank-demo] to get a Tozny user id.
+Then try logging in to the [web-based demo][bank-demo] to get a Tozny user id.
 
 [Android]: https://play.google.com/store/apps/details?id=com.tozny.authenticator
 [iOS]: https://itunes.apple.com/us/app/tozny/id855365899?mt=8
@@ -47,7 +47,7 @@ Next run the PAM demo:
 Enter your Tozny user id and realm id.
 
 The demo will download dependencies and run the build process in a Docker
-container, so it will take a little while to start up.
+container; so it will take a little while to start up.
 Once it is running, you will have a local ssh server to log into.
 
 
